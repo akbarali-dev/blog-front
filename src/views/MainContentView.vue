@@ -1,34 +1,25 @@
 <template>
   <div class="main-content">
+    <!--#NAVBAR-->
     <Navbar/>
-    <AbutView/>
+    <RouterView/>
+    <!--#ABOUT-->
+    <!--#RESUME-->
+    <!--#PORTFOLIO-->
+    <!--#BLOG-->
+    <!--#CONTACT-->
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
 import AbutView from "./AbutView.vue";
+import ResumeView from "./ResumeView.vue";
 
 export default {
   name: "MainContentView",
-  components: {AbutView, Navbar}
+  components: {ResumeView, AbutView, Navbar}
 }
 </script>
 
 
-<style>
-main {
-  max-width: 1200px;
-  margin-inline: auto;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 25px;
-}
-
-.main-content {
-  min-width: 75%;
-  width: 75%;
-  margin: 0;
-}
-</style>

@@ -1,0 +1,8 @@
+export {default as AbutView} from './AbutView.vue'
+export {default as HomePageView} from './HomePageView.vue'
+export {default as MainContentView} from './MainContentView.vue'
+export {default as ResumeView} from './ResumeView.vue'
+export {default as PortfolioView} from './PortfolioView.vue'
+export {default as BlogView} from './BlogView.vue'
+export {default as ContactView} from './ContactView.vue'
+export {default as TestimonialsView} from './TestimonialsView.vue'
