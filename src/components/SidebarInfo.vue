@@ -1,13 +1,8 @@
 <template>
-  <div class="sidebar-info_more ">
-
+  <div class="sidebar-info_more" :class="{ activet: visible }">
     <div class="separator"></div>
-
     <ul class="contacts-list">
-
-
       <li class="contact-item">
-
         <div class="icon-box">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
                viewBox="0 0 16 16">
@@ -118,7 +113,9 @@
 
 <script>
 export default {
-  name: "SidebarInfo"
+  name: "SidebarInfo",
+  props: ['visible'],
+
 }
 </script>
 

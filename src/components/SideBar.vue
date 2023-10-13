@@ -25,7 +25,7 @@
       </button>
 
     </div>
-    <SidebarInfo/>
+    <SidebarInfo :visible="sidebarOpen"/>
 
   </aside>
 </template>
@@ -40,7 +40,7 @@ export default {
   components: {SidebarInfo, ContactItem, SidebarInfoView},
   data() {
     return {
-      sidebarOpen: false,
+      sidebarOpen: true,
     }
 
   },
