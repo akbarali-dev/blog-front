@@ -1,7 +1,7 @@
 <template>
   <article class="about  active" data-page="about">
 
-    <Header>About me</Header>
+    <Header>About me {{data}}</Header>
     <AboutText>
       I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
       I enjoy
@@ -39,13 +39,24 @@
 
 <script>
 
-
+import {mapState} from 'vuex'
 import {AboutText,Header} from "../components";
+
+
 import {ClientsView, TestimonialsView, CurrentProgressView} from '.'
 
 export default {
   name: "AbutView",
-  components: {TestimonialsView, CurrentProgressView, Header, AboutText, ClientsView}
+  components: {TestimonialsView, CurrentProgressView, Header, AboutText, ClientsView},
+  computed:{
+    ...mapState({
+      data:state => state.abouts.data
+    })
+  },
+  mounted(){
+    console.log("MOUNTED")
+    this.$store.dispatch('abouts')
+  }
 }
 </script>
 
