@@ -2,16 +2,19 @@
   <aside class="sidebar" data-sidebar>
 
     <!--      <SidebarInfoView/>-->
-    <div class="sidebar-info">
+    <Loader v-if="isLoading"/>
+    <div v-else-if="contact" class="sidebar-info">
 
       <figure class="avatar-box">
-        <img src="image/blakc and dark.png" alt="Akbarali Asqaraliyev" width="80">
+        <img :src="imageUrl" alt="Akbarali Asqaraliyev" width="80">
       </figure>
 
-      <div class="info-content">
-        <h1 class="name" title="Richard hanrick">Akbarali Asqaraliyev</h1>
 
-        <p class="title">Web developer</p>
+      <div class="info-content">
+        <h1 class="name" title="Richard hanrick">{{ contact.contact.full_name }}</h1>
+
+
+        <p class="title">{{ contact.contact.job_name }}</p>
       </div>
 
       <button @click="toggleSidebar" class="info_more-btn" data-sidebar-btn>
@@ -34,6 +37,8 @@
 import SidebarInfoView from "../views/SidebarInfoView.vue";
 import ContactItem from "./ContactItem.vue";
 import SidebarInfo from "./SidebarInfo.vue";
+import {mapState} from "vuex";
+import {baseUrl} from '../contstants'
 
 export default {
   name: "SideBar",
@@ -42,7 +47,22 @@ export default {
     return {
       sidebarOpen: true,
     }
+  },
+   mounted() {
 
+
+    this.$store.dispatch('contact')
+  },
+  computed: {
+    ...mapState({
+      contact: state => state.abouts.contact,
+      isLoading: state => state.abouts.isLoadingSide
+
+    }),
+    imageUrl() {
+
+      return baseUrl+this.contact.contact.image;
+    },
   },
   methods: {
     toggleSidebar() {

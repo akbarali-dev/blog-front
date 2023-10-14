@@ -22,3 +22,4 @@ export const removeItem = key => {
 		console.log('Error deleting data')
 	}
 }
+

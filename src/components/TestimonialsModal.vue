@@ -28,7 +28,7 @@
 
         <h4 class="h3 modal-title" data-modal-title>{{ title }}</h4>
 
-        <time datetime="2021-06-14">{{ createdAt }}</time>
+        <time datetime="2021-06-14">{{ new Date(createdAt).toLocaleDateString('us') }}</time>
 
         <div data-modal-text>
           <p>

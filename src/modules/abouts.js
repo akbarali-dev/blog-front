@@ -2,7 +2,9 @@ import AboutService from '../service/about'
 
 const state = {
     data: null,
+    contact:null,
     isLoading: false,
+    isLoadingSide: false,
     error: null,
 }
 
@@ -19,6 +21,18 @@ const mutations = {
     getAboutFailure(state) {
         state.isLoading = false
     },
+    getContactStart(state) {
+        state.isLoadingSide = true
+        state.contact = null
+        state.error = null
+    },
+    getContactSuccess(state, payload) {
+        state.isLoadingSide = false
+        state.contact = payload
+    },
+    getContactFailure(state) {
+        state.isLoadingSide = false
+    },
 }
 
 const actions = {
@@ -26,12 +40,26 @@ const actions = {
         return new Promise(resolve => {
             context.commit('getAboutStart')
             AboutService.abouts()
-                .then(responce => {
-                    context.commit('getAboutSuccess', responce.data)
+                .then(response => {
+                    // console.log(response)
+                    context.commit('getAboutSuccess', response.data)
+                    // resolve(response.data.articles)
                 })
-                .catch()
+                .catch(() => context.commit('getAboutFailure'))
         })
-    }
+    },
+    contact(context) {
+        return new Promise(resolve => {
+            context.commit('getContactStart')
+            AboutService.contact()
+                .then(response => {
+                    // console.log(response)
+                    context.commit('getContactSuccess', response.data)
+                    // resolve(response.data.articles)
+                })
+                .catch(() => context.commit('getContactFailure'))
+        })
+    },
 }
 
-export default {state, mutations}
+export default {state, mutations, actions}

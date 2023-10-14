@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-info_more" :class="{ activet: visible }">
+  <div v-if="contact" class="sidebar-info_more" :class="{ activet: visible }">
     <div class="separator"></div>
     <ul class="contacts-list">
       <li class="contact-item">
@@ -15,7 +15,7 @@
         <div class="contact-info">
           <p class="contact-title">Email</p>
 
-          <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+          <a :href="`mailto:${contact.contact.email}`" class="contact-link">{{contact.contact.email}}</a>
         </div>
 
       </li>
@@ -34,7 +34,7 @@
         <div class="contact-info">
           <p class="contact-title">Phone</p>
 
-          <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+          <a :href="`tel:${contact.contact.phone}`" class="contact-link">{{contact.contact.phone}}</a>
         </div>
 
       </li>
@@ -54,7 +54,7 @@
         <div class="contact-info">
           <p class="contact-title">Birthday</p>
 
-          <time datetime="1982-06-23">June 23, 1982</time>
+          <time datetime="1982-06-23">{{contact.contact.birth_date}}</time>
         </div>
 
       </li>
@@ -73,7 +73,7 @@
         <div class="contact-info">
           <p class="contact-title">Location</p>
 
-          <address>Sacramento, California, USA</address>
+          <address>{{contact.location.name}}</address>
         </div>
 
       </li>
@@ -84,27 +84,14 @@
 
     <ul class="social-list">
 
-      <li class="social-item">
-        <a href="#" class="social-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
-               viewBox="0 0 16 16">
-            <path
-                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-          </svg>
+      <li v-for="social in contact.socialNetwork" :key="social" class="social-item">
+
+        <a :href="social.link" class="social-link">
+          <div v-html="social.icon.code"></div>
         </a>
       </li>
 
-      <li class="social-item">
-        <a href="#" class="social-link">
-          <ion-icon class="socials-icons" name="logo-twitter"></ion-icon>
-        </a>
-      </li>
 
-      <li class="social-item">
-        <a href="#" class="social-link">
-          <ion-icon class="socials-icons" name="logo-instagram"></ion-icon>
-        </a>
-      </li>
 
     </ul>
 
@@ -112,9 +99,20 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+import {baseUrl} from "../contstants";
+
 export default {
   name: "SidebarInfo",
   props: ['visible'],
+  computed: {
+    ...mapState({
+      contact: state => state.abouts.contact,
+      isLoading: state => state.abouts.isLoading
+
+    }),
+
+  },
 
 }
 </script>

@@ -1,8 +1,11 @@
 import axios from './axios';
 
 const AboutService={
-    about(){
+    abouts(){
         return axios.get('/about/user-about/')
+    },
+    contact(){
+        return axios.get('about/user-contact/')
     }
 }
 export default AboutService

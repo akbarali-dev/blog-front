@@ -5,16 +5,19 @@
 
     <!-- #main-content-->
     <MainContentView/>
+
   </main>
+  <Footer/>
 </template>
 
 <script>
 import {SideBar} from "../components";
 import MainContentView from "./MainContentView.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
   name: "HomePageView",
-  components: {MainContentView, SideBar},
+  components: {Footer, MainContentView, SideBar},
 
 }
 </script>
@@ -478,7 +481,7 @@ main {
 }
 
 .social-item .social-link {
-  color: var(--light-gray-70);
+  color: var(--orange-yellow-crayola);
   font-size: 18px;
 }
 
@@ -588,6 +591,9 @@ main {
 
 .service-icon-box {
   margin-bottom: 10px;
+  color: var(--orange-yellow-crayola);
+  width: 40px;
+  height: 32px;
 }
 
 .service-icon-box img {
@@ -687,6 +693,11 @@ main {
   pointer-events: none;
   visibility: hidden;
 }
+.modal-content{
+  background: hsla(240, 1%, 16%, 0.1);
+  backdrop-filter: blur(0px);
+  border: none;
+}
 
 .modal-container::-webkit-scrollbar {
   display: none;
@@ -716,6 +727,7 @@ main {
   visibility: visible;
   pointer-events: all;
 }
+
 
 .testimonials-modal {
   background: var(--eerie-black-2);
@@ -817,6 +829,7 @@ main {
 
 .clients-item {
   min-width: 50%;
+  border-radius: 50%;
   scroll-snap-align: start;
 }
 
