@@ -4,6 +4,7 @@
 
     <Header>Portfolio</Header>
 
+<Test/>
     <section class="projects">
 
       <ul class="filter-list">
@@ -235,10 +236,11 @@
 
 <script>
 import Header from "../components/Header.vue";
+import Test from "../components/Test.vue"
 
 export default {
   name: "PortfolioView",
-  components: {Header}
+  components: {Header, Test}
 }
 </script>
 
