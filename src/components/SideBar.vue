@@ -11,7 +11,7 @@
 
 
       <div class="info-content">
-        <h1 class="name" title="Richard hanrick">{{ contact.contact.full_name }}</h1>
+        <h1 class="name" :title="contact.contact.full_name">{{ contact.contact.full_name }}</h1>
 
 
         <p class="title">{{ contact.contact.job_name }}</p>
