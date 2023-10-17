@@ -31,7 +31,7 @@
     - testimonials modal
   -->
   <TestimonialsModal :text="modalText" :title="modalTitle"
-                     :createdAt="modalCreatedAt" :image="modalImg"
+                     :createdAt="modalCreatedAt" :image="modalImg" :isActive="modalVisible"
                      @close="closeModal" :class="{ active: modalVisible }"/>
 
 </template>

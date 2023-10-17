@@ -1,7 +1,7 @@
 <template>
   <div class="modal-container" data-modal-container>
 
-    <div class="overlay" data-overlay></div>
+    <div class="overlay" :class="{active:isActive}" data-overlay></div>
 
     <section class="testimonials-modal">
 
@@ -46,7 +46,7 @@
 <script>
 export default {
   name: "TestimonialsModal",
-  props: ['text', 'title', 'createdAt', 'image'],
+  props: ['text', 'title', 'createdAt', 'image', 'isActive'],
   data() {
     return {
       modalVisible: false
