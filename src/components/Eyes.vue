@@ -1,14 +1,15 @@
 <template>
   <div class="wrap">
     <div class="eye-shape">
-      <div class="number">10</div>
+      <div class="number">{{visitors}}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Eyes"
+  name: "Eyes",
+  props:['visitors']
 }
 </script>
 
