@@ -4,11 +4,12 @@ import footer from "../modules/footer";
 import resume from "../modules/resume";
 import portfolio from "../modules/portfolio";
 import blog from "../modules/blog";
+import user from "../modules/user";
 
 const store = createStore({
     state: {},
     mutations: {},
     action: {},
-    modules: {abouts, footer, resume, portfolio, blog}
+    modules: {abouts, footer, resume, portfolio, blog, user}
 })
 export default store

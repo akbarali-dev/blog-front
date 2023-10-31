@@ -29,7 +29,7 @@
         <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input
                   v-model="description"></textarea>
 
-        <button class="form-btn" type="submit" :disabled="!isFormValid">
+        <button class="form-btn" type="submit" @click="submitHandler" :disabled="!isFormValid">
           <ion-icon name="paper-plane"></ion-icon>
           <span>Send Message</span>
         </button>
@@ -45,6 +45,7 @@
 
 <script>
 import Header from "../components/Header.vue";
+import {mapState} from "vuex";
 
 export default {
   name: "ContactView",
@@ -60,11 +61,29 @@ export default {
     isFormValid() {
       return this.full_name !== '' && this.email !== '' && this.description !== '' && /^[^@]+@\w+(\.\w+)+\w$/.test(this.email);
     },
+    ...mapState({
+      contact: state => state.abouts.contact,
+    }),
   },
+
   methods: {
-    checkFormValidation() {
-      // The computed property is used to check form validation
+    submitHandler(e) {
+      e.preventDefault()
+      const data = {
+        user: this.contact.contact.id,
+        full_name: this.full_name,
+        email: this.email,
+        description: this.description,
+      }
+      console.log(data)
+      this.$store
+          .dispatch('sendMessage', data)
+          .then(
+              this.$router.push({name: 'about'})
+          )
+          .catch(err => console.log('ERROR', err))
     },
+
     submitForm() {
       if (this.isFormValid) {
 
