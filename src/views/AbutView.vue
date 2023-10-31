@@ -1,5 +1,5 @@
 <template>
-
+<SnackBar>Send message</SnackBar>
   <article class="about  active" data-page="about">
 
     <Header>About me</Header>
