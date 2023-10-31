@@ -1,4 +1,4 @@
-import PortfolioService from "../service/portfolio";
+import BlogService from "../service/blog";
 
 const state = {
     data: null,
@@ -7,30 +7,31 @@ const state = {
 }
 
 const mutations = {
-    getPortfolioStart(state) {
+    getBlogStart(state) {
         state.isLoading = true
         state.data = null
         state.error = null
     },
-    getPortfolioSuccess(state, payload) {
+    getBlogSuccess(state, payload) {
         state.isLoading = false
         state.data = payload
     },
-    getPortfolioFailure(state) {
+    getBlogFailure(state) {
         state.isLoading = false
     },
 }
 
 const actions = {
-    portfolio(context) {
+    blog(context) {
         return new Promise(resolve => {
-            context.commit('getPortfolioStart')
-                PortfolioService.portfolio()
+            context.commit('getBlogStart')
+                BlogService.blogs()
                 .then(response => {
-                    context.commit('getPortfolioSuccess', response.data)
+                    console.log(response)
+                    context.commit('getBlogSuccess', response.data)
                     // resolve(response.data.articles)
                 })
-                .catch(() => context.commit('getPortfolioFailure'))
+                .catch(() => context.commit('getBlogFailure'))
         })
     },
 }

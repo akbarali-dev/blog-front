@@ -1206,7 +1206,7 @@ main {
 .blog-meta {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  //align-items: center;
   gap: 7px;
   margin-bottom: 10px;
 }
@@ -1219,6 +1219,7 @@ main {
 
 .blog-meta .dot {
   background: var(--light-gray-70);
+  //justify-content: center;
   width: 4px;
   height: 4px;
   border-radius: 4px;

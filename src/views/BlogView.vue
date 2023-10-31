@@ -4,11 +4,9 @@
     <Header>Blog</Header>
 
     <section class="blog-posts">
-
-      <ul class="blog-posts-list">
-        <Blog v-for="i in 5"/>
-      </ul>
-
+      <template v-if="blogs">
+        <Blog :blogs="blogs"/>
+        </template>
     </section>
 
   </article>
@@ -18,10 +16,21 @@
 <script>
 import Header from "../components/Header.vue";
 import Blog from "../components/Blog.vue"
+import {mapState} from "vuex";
 
 export default {
   name: "BlogView",
-  components: {Header, Blog}
+  components: {Header, Blog},
+    computed: {
+    ...mapState({
+      blogs: state => state.blog.data,
+      isLoading: state => state.blog.isLoading
+
+    }),
+  },
+  mounted() {
+    this.$store.dispatch('blog')
+  }
 }
 </script>
 
