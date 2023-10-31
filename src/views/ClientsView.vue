@@ -32,10 +32,7 @@ export default {
     ...mapState({
       clients: state => state.abouts.data.clients,
       isLoading: state => state.abouts.isLoading
-
     }),
-
-
   },
 }
 </script>

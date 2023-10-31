@@ -15,7 +15,7 @@
         <div class="contact-info">
           <p class="contact-title">Email</p>
 
-          <a :href="`mailto:${contact.contact.email}`" class="contact-link">{{contact.contact.email}}</a>
+          <a :href="`mailto:${contact.contact.email}`" :title="contact.contact.email" class="contact-link">{{contact.contact.email}}</a>
         </div>
 
       </li>

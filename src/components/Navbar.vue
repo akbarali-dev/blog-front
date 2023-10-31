@@ -5,29 +5,29 @@
 
       <li class="navbar-item">
         <!--        <button class="navbar-link  active" data-nav-link>About</button>-->
-        <RouterLink :to="{name:'about'}" @click="activeAbout" :class="{active: about}" class="navbar-link  ">About
+        <RouterLink :to="{name:'about'}"  :class="{active: this.$route.name==='about'}" class="navbar-link  ">About
         </RouterLink>
       </li>
 
       <li class="navbar-item">
-        <RouterLink :to="{name:'resume'}" @click="activeResume" :class="{active: resume}" class="navbar-link ">Resume
+        <RouterLink :to="{name:'resume'}"  :class="{active: this.$route.name==='resume'}" class="navbar-link ">Resume
         </RouterLink>
       </li>
 
       <li class="navbar-item">
 
-        <RouterLink :to="{name:'portfolio'}" @click="activePortfolio" :class="{active: portfolio}" class="navbar-link">
+        <RouterLink :to="{name:'portfolio'}"  :class="{active: this.$route.name==='portfolio'}" class="navbar-link">
           Portfolio
         </RouterLink>
       </li>
 
       <li class="navbar-item">
-        <RouterLink :to="{name:'blog'}" @click="activeBlog" :class="{active: blog}" class="navbar-link">Blog
+        <RouterLink :to="{name:'blog'}"  :class="{active: this.$route.name==='blog'}" class="navbar-link">Blog
         </RouterLink>
       </li>
 
       <li class="navbar-item">
-        <RouterLink :to="{name:'contact'}" @click="activeContact" :class="{active: contact}" class="navbar-link">
+        <RouterLink :to="{name:'contact'}"  :class="{active: this.$route.name==='contact'}" class="navbar-link">
           Contact
         </RouterLink>
       </li>
@@ -41,6 +41,8 @@
 <script>
 import Eyes from "./Eyes.vue";
 
+import {useRouter} from 'vue-router'
+
 export default {
   name: "Navbar",
   components: {Eyes},
@@ -53,41 +55,8 @@ export default {
       contact: false,
     }
   },
-  computed: {
-    currentRouteName() {
-      return this.$router;
-    }
-  },
-  methods: {
-    allUnActive() {
-      this.about = false
-      this.resume = false
-      this.portfolio = false
-      this.blog = false
-      this.contact = false
-    },
-    activeAbout() {
-      console.log(this.currentRouteName);
-      this.allUnActive()
-      this.about = true
-    },
-    activeResume() {
-      this.allUnActive()
-      this.resume = true
-    },
-    activePortfolio() {
-      this.allUnActive()
-      this.portfolio = true
-    },
-    activeBlog() {
-      this.allUnActive()
-      this.blog = true
-    },
-    activeContact() {
-      this.allUnActive()
-      this.contact = true
-    }
-  }
+
+
 }
 </script>
 

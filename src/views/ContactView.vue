@@ -6,8 +6,9 @@
     <section class="mapbox" data-mapbox>
       <figure>
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-            width="400" height="300" loading="lazy"></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95942.66968298671!2d69.1969665331789!3d41.282568073028806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1697565567114!5m2!1sru!2s"
+            width="400" height="300" loading="lazy">
+        </iframe>
       </figure>
     </section>
 
@@ -21,12 +22,14 @@
           <input type="text" name="fullname" class="form-input" @input="checkFormValidation" placeholder="Full name"
                  required data-form-input v-model="full_name">
 
-          <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input v-model="email">
+          <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input
+                 v-model="email">
         </div>
 
-        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input v-model="description"></textarea>
+        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input
+                  v-model="description"></textarea>
 
-        <button  class="form-btn" type="submit" :disabled="!isFormValid" >
+        <button class="form-btn" type="submit" :disabled="!isFormValid">
           <ion-icon name="paper-plane"></ion-icon>
           <span>Send Message</span>
         </button>

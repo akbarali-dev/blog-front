@@ -1,5 +1,5 @@
 <template>
-  <section class="timeline">
+  <section v-if="data" class="timeline">
 
     <div class="title-wrapper">
       <div class="icon-box">
@@ -16,46 +16,17 @@
 
     <ol class="timeline-list">
 
-      <li class="timeline-item">
+      <li class="timeline-item" v-for="d in data" key="d">
 
-        <h4 class="h4 timeline-item-title">University school of the arts</h4>
+        <h4 class="h4 timeline-item-title">{{ d.name }}</h4>
 
-        <span>2007 — 2008</span>
+        <span>{{ d.start_year }} — {{ d.graduation_year }}</span>
 
-        <p class="timeline-text">
-          Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-          quas molestias
-          exceptur.
+        <p class="timeline-text">{{ d.description }}
         </p>
 
       </li>
 
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">New york academy of art</h4>
-
-        <span>2006 — 2007</span>
-
-        <p class="timeline-text">
-          Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-          omnis..
-        </p>
-
-      </li>
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-        <span>2002 — 2004</span>
-
-        <p class="timeline-text">
-          Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-          magni dolores
-          eos.
-        </p>
-
-      </li>
 
     </ol>
 
@@ -63,14 +34,25 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   props: {
     isEducation: {
       type: Boolean,
       required: true
+    },
+    data: {
+      type: Array,
+      required: true
     }
   },
-  name: "EducationAndExperienceView"
+  name: "EducationAndExperienceView",
+  computed: {
+    ...mapState({
+      isLoading: state => state.resume.isLoading
+    }),
+  }
 }
 </script>
 

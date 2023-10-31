@@ -7,8 +7,6 @@
 
       <ul class="blog-posts-list">
         <Blog v-for="i in 5"/>
-
-
       </ul>
 
     </section>

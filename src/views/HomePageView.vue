@@ -931,6 +931,7 @@ main {
 }
 
 .skills-list {
+
   padding: 20px;
 }
 
@@ -941,9 +942,10 @@ main {
 
 .skill .title-wrapper {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  //align-items: center;
   gap: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 1px;
 }
 
 .skill .title-wrapper data {
@@ -954,7 +956,7 @@ main {
 
 .skill-progress-bg {
   background: var(--jet);
-  width: 100%;
+  width: 65%;
   height: 8px;
   border-radius: 10px;
 }
@@ -964,6 +966,7 @@ main {
   height: 100%;
   border-radius: inherit;
 }
+
 
 
 /*-----------------------------------*\
@@ -1111,6 +1114,7 @@ main {
 }
 
 .project-item-icon-box ion-icon {
+
   --ionicon-stroke-width: 50px;
 }
 
@@ -1639,7 +1643,7 @@ textarea.form-input::-webkit-resizer {
   .clients-list {
     gap: 50px;
     margin: 0 -30px;
-    padding: 45px;
+    padding: 41px;
     scroll-padding-inline: 45px;
   }
 
@@ -1666,7 +1670,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .skills-item:not(:last-child) {
-    margin-bottom: 25px;
+    margin-bottom: 2px;
   }
 
 
