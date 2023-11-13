@@ -22,7 +22,9 @@
           <h3 class="h3 blog-item-title">{{blog.title}}</h3>
 
           <p class="blog-text">
-            {{blog.description}}
+            {{blog.description.substring(1, 100)}}
+            <template v-if="blog.description.length>100">...</template>
+
           </p>
 
         </div>
@@ -55,10 +57,19 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 a:hover {
   color: #212121;
   margin-right: 1px;
 
+}
+h4{
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
 }
 </style>

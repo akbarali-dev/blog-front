@@ -51,14 +51,22 @@ export default {
 </script>
 
 
-<style>
-.test{
+<style scoped>
+.test {
+  //color: #9CE6A8;
   display: inline-block;
 }
+
 a:hover {
+
   color: Canvas;
   margin-right: 1px;
 
+}
+
+a {
+
+  color: #9CE6A8;
 }
 
 .project-title,

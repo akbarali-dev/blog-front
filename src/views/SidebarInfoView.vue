@@ -1,9 +1,9 @@
 <template>
   <div class="sidebar-info">
 
-    <figure class="avatar-box">
-      <img src="image/blakc and dark.png" alt="Richard hanrick" width="80">
-    </figure>
+<!--    <figure class="avatar-box">-->
+<!--      <img src="image/blakc and dark.png" alt="Richard hanrick" width="80">-->
+<!--    </figure>-->
 
     <div class="info-content">
       <h1 class="name" title="Richard hanrick">Akbarali Asqaraliyev</h1>

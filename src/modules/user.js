@@ -4,6 +4,7 @@ const state = {
     data: null,
     isLoading: false,
     error: null,
+    sender: false
 }
 
 const mutations = {
@@ -13,12 +14,16 @@ const mutations = {
         state.error = null
     },
     postUserSuccess(state, payload) {
+        state.sender=true
         state.isLoading = false
         state.data = payload
     },
     postUserFailure(state) {
         state.isLoading = false
     },
+    senderFailure(state){
+        state.sender=false
+    }
 }
 
 const actions = {

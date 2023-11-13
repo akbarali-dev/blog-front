@@ -53,7 +53,9 @@ body {
 }
 
 .notification {
-  //position: unset;
+  position: absolute;
+  top: 0;
+  right: 20px;
 
   bottom: 32px;
   align-items: center;
@@ -61,7 +63,8 @@ body {
   background-color: black;
   color: var(--text);
   max-width: 320px;
-  width: 100%;
+  width: 50%;
+  height: 7%;
   transform: translateY(30px);
   opacity: 0;
   visibility: hidden;

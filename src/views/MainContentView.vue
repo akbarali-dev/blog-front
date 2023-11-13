@@ -1,4 +1,5 @@
 <template>
+  <SnackBar v-if="sender">Send message</SnackBar>
   <div class="main-content">
     <!--#NAVBAR-->
     <Navbar/>
@@ -15,10 +16,23 @@
 import Navbar from "../components/Navbar.vue";
 import AbutView from "./AbutView.vue";
 import ResumeView from "./ResumeView.vue";
+import {mapState} from "vuex";
 
 export default {
   name: "MainContentView",
-  components: {ResumeView, AbutView, Navbar}
+  components: {ResumeView, AbutView, Navbar},
+  computed: {
+    ...mapState({
+      sender: state => state.user.sender
+    }),
+
+
+  },
+  mounted() {
+    setTimeout(() => {
+      this.$store.commit('senderFailure');
+    }, 5000);
+  }
 }
 </script>
 

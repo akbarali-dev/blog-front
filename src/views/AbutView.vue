@@ -1,11 +1,11 @@
 <template>
-<SnackBar>Send message</SnackBar>
+
   <article class="about  active" data-page="about">
 
     <Header>About me</Header>
 
     <Loader v-if="isLoading"/>
-    <template  v-else-if=" data">
+    <template v-else-if=" data">
 
       <AboutText>
         {{ data.about }}
@@ -50,12 +50,16 @@ export default {
   computed: {
     ...mapState({
       data: state => state.abouts.data,
-      isLoading: state => state.abouts.isLoading
+      isLoading: state => state.abouts.isLoading,
+      sender: state => state.user.sender
+    }),
 
-    })
+
   },
   mounted() {
     this.$store.dispatch('abouts')
+
+
   }
 }
 </script>

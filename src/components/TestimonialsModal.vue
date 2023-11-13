@@ -19,7 +19,7 @@
           <img :src="image.src" :alt="title" width="80" data-modal-img>
         </figure>
 
-        <img src="public/images/logos/icon-quote.svg" alt="quote icon">
+<!--        <img src="public/images/logos/icon-quote.svg" alt="quote icon">-->
 
 
       </div>
