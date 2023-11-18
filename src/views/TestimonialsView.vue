@@ -15,8 +15,11 @@
           <h4 class="h4 testimonials-item-title" data-testimonials-title>{{ item.full_name }}</h4>
 
           <div class="testimonials-text" data-testimonials-text>
-            <p>
-              {{ item.description.substring(1, 100) }}
+            <p v-if="item.description.length > 100">
+              {{ item.description.substring(0, 100) }} ...
+            </p>
+            <p v-else>
+              {{ item.description }}
             </p>
           </div>
 
