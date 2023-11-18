@@ -2,6 +2,7 @@
   <article class="blog active" data-page="blog">
 
     <Header>Blog</Header>
+    <Loader v-if="isLoading"/>
 
     <section class="blog-posts">
       <template v-if="blogs">

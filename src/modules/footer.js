@@ -27,7 +27,7 @@ const actions={
             context.commit('getInfoStart')
             FooterService.info()
                 .then(response => {
-                    console.log(response.data)
+                    // console.log(response.data)
                     context.commit('getInfoSuccess', response.data)
                 })
                 .catch(() => context.commit('getInfoFailure'))

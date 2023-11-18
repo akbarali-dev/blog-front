@@ -2,6 +2,7 @@
   <article class="contact active" data-page="contact">
 
     <Header>Contact</Header>
+    <Loader v-if="isLoading"/>
 
     <section class="mapbox" data-mapbox>
       <figure>
@@ -63,6 +64,7 @@ export default {
     },
     ...mapState({
       contact: state => state.abouts.contact,
+      isLoading: state => state.abouts.isLoading,
     }),
   },
 
@@ -75,7 +77,7 @@ export default {
         email: this.email,
         description: this.description,
       }
-      console.log(data)
+      // console.log(data)
       this.$store
           .dispatch('sendMessage', data)
           .then(

@@ -2,6 +2,7 @@
   <article class="resume active" data-page="resume">
 
     <Header>Resume</Header>
+    <Loader v-if="isLoading"/>
 
 
     <!--Education-->

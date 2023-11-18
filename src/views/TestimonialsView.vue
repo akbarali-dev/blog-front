@@ -16,7 +16,7 @@
 
           <div class="testimonials-text" data-testimonials-text>
             <p>
-              {{ item.description }}
+              {{ item.description.substring(1, 100) }}
             </p>
           </div>
 

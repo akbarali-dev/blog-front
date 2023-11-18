@@ -27,7 +27,7 @@ const actions = {
             context.commit('getBlogStart')
                 BlogService.blogs()
                 .then(response => {
-                    console.log(response)
+                    // console.log(response)
                     context.commit('getBlogSuccess', response.data)
                     // resolve(response.data.articles)
                 })
