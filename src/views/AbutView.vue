@@ -3,7 +3,6 @@
   <article class="about  active" data-page="about">
 
     <Header>About me</Header>
-
     <Loader v-if="isLoading"/>
     <template v-else-if=" data">
 
@@ -58,7 +57,9 @@ export default {
   },
   mounted() {
     this.$store.dispatch('abouts')
-
+    setTimeout(() => {
+      this.$store.commit('senderFailure');
+    }, 5000);
 
   }
 }

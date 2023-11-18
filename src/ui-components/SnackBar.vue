@@ -30,7 +30,7 @@ export default {
 <style scoped>
 :root {
   --background: #f3f1f9;
-  --toast-background: #292B2D;
+  --toast-background: #f3f1f9;
   --toast-success: #9CE6A8;
   --text: white;
 }
@@ -53,14 +53,15 @@ body {
 }
 
 .notification {
+
   position: absolute;
   top: 0;
   right: 20px;
 
   bottom: 32px;
   align-items: center;
-  border-radius: 6px;
-  background-color: black;
+  //border-radius: 6px;
+  background-color: white;
   color: var(--text);
   max-width: 320px;
   width: 50%;
@@ -123,7 +124,7 @@ body {
   transform-origin: left;
   background: linear-gradient(
       to right,
-      var(--toast-background),
+      //var(--toast-background),
       var(--toast-success)
   );
   border-radius: inherit;
@@ -143,7 +144,7 @@ body {
 }
 
 .icon__wrapper svg {
-  stroke: var(--toast-background);
+  //stroke: var(--toast-background);
   stroke-width: 3px;
 }
 

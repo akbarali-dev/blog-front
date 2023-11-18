@@ -1,6 +1,8 @@
 <template>
-  <SnackBar v-if="sender">Send message</SnackBar>
+<!--  <SnackBar v-if="sender">Send message</SnackBar>-->
+
   <div class="main-content">
+    <SnackBar2 v-if="sender">Xabar yuborildi</SnackBar2>
     <!--#NAVBAR-->
     <Navbar/>
     <RouterView/>
