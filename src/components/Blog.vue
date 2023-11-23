@@ -22,7 +22,7 @@
           <h3 class="h3 blog-item-title">{{blog.title}}</h3>
 
           <p class="blog-text">
-            {{blog.description.substring(1, 100)}}
+            {{blog.description.substring(0, 300)}}
             <template v-if="blog.description.length>100">...</template>
 
           </p>
