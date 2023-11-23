@@ -23,7 +23,7 @@
 
           <p class="blog-text">
             {{blog.description.substring(0, 300)}}
-            <template v-if="blog.description.length>100">...</template>
+            <template v-if="blog.description.length>300">...</template>
 
           </p>
 
