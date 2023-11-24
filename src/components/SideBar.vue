@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar" data-sidebar>
+  <aside class="sidebar">
 
     <!--      <SidebarInfoView/>-->
     <Loader v-if="isLoading"/>
@@ -45,11 +45,13 @@ export default {
   components: {SidebarInfo, ContactItem, SidebarInfoView},
   data() {
     return {
-      sidebarOpen: true,
+      sidebarOpen: false,
     }
   },
-   mounted() {
-
+  mounted() {
+    setTimeout(() => {
+      this.sidebarOpen = true
+    }, 1200);
 
     this.$store.dispatch('contact')
   },
@@ -61,7 +63,7 @@ export default {
     }),
     imageUrl() {
 
-      return baseUrl+this.contact.contact.image;
+      return baseUrl + this.contact.contact.image;
     },
   },
   methods: {
@@ -74,5 +76,14 @@ export default {
 
 
 <style>
+.sidebar-slide-enter-active,
+.sidebar-slide-leave-active {
+  transition: height 5s ease; /* Apply the transition effect on height */
+}
 
+.sidebar-slide-enter,
+.sidebar-slide-leave-to {
+  height: 0; /* Initially hide the sidebar */
+  overflow: hidden;
+}
 </style>
