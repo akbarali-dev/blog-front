@@ -1,5 +1,8 @@
 <template>
-  <div v-if="contact" class="sidebar-info_more" :class="{ activet: visible }">
+
+  <div v-if="contact" class="sidebar_info_more"
+       :class="{activet : visible }"
+  >
     <div class="separator"></div>
     <ul class="contacts-list">
       <li class="contact-item">
@@ -118,6 +121,32 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+
+ .sidebar_info_more {
+    opacity: 1;
+    visibility: visible;
+    transition: top 5s;
+   animation: fadeIn 5s forwards;
+  }
+
+ .sidebar.active .sidebar_info_more {
+  opacity: 1;
+   transition: top 5s;
+  visibility: visible;
+}
+
+
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  transition: top 5s;
+}
+
+
 
 </style>

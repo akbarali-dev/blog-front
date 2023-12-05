@@ -38,14 +38,14 @@
 <script>
 
 import {mapState} from 'vuex'
-import {AboutText, Header} from "../components";
+import {AboutText, Header, Test} from "../components";
 
 
 import {ClientsView, TestimonialsView, CurrentProgressView} from '.'
 
 export default {
   name: "AbutView",
-  components: {TestimonialsView, CurrentProgressView, Header, AboutText, ClientsView},
+  components: {TestimonialsView, CurrentProgressView, Header, AboutText, ClientsView, Test},
   computed: {
     ...mapState({
       data: state => state.abouts.data,

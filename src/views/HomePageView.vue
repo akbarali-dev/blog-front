@@ -425,9 +425,10 @@ main {
 
 @media (max-width: 1250px) {
   .activet {
+
     opacity: 0;
-    visibility: hidden;
-    transition: var(--transition-2);
+    visibility: visible;
+    transition: 5s;
     width: 0;
     height: 0;
   }
@@ -2041,10 +2042,15 @@ textarea.form-input::-webkit-resizer {
     display: none;
   }
 
+    /**
   .sidebar-info_more {
     opacity: 1;
     visibility: visible;
+    transition: top 5s;
   }
+  */
+
+
 
   .contacts-list {
     grid-template-columns: 1fr;

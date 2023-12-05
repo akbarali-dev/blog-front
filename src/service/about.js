@@ -1,11 +1,14 @@
 import axios from './axios';
+import {getCurrentUser, getItem} from "../helpers/persistaneStorage";
 
 const AboutService={
     abouts(){
-        return axios.get('/about/user-about/')
+        const username = getCurrentUser('current-user')
+        return axios.get(`/about/user-about/${username}`)
     },
     contact(){
-        return axios.get('about/user-contact/')
+        const username = getCurrentUser('current-user')
+        return axios.get(`about/user-contact/${username}`)
     }
 }
 export default AboutService

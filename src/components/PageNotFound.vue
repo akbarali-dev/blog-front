@@ -13,7 +13,7 @@
 
 <script>
 import Header from "./Header.vue";
-
+import {setItem} from '../helpers/persistaneStorage'
 export default {
   name: "PageNotFound",
   components: {Header},
@@ -22,7 +22,8 @@ export default {
       e.preventDefault()
       this.$router.push({name: 'about'})
     }
-  }
+  },
+
 
 }
 </script>

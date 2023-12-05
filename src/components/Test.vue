@@ -1,35 +1,7 @@
 <template>
-  <div>
-    <!-- Custom select -->
-    <div @click="toggleSelect" data-select>
-      <span data-select-value>{{ selectedValue }}</span>
-      <ul v-if="selectVisible">
-        <li v-for="(item, index) in selectItems" :key="index" @click="selectItem(item)">{{ item }}</li>
-      </ul>
-    </div>
-
-    <!-- Filter buttons -->
-    <div>
-      <button
-        v-for="(btn, index) in filterBtns"
-        :key="index"
-        @click="filterItems(btn)"
-        :class="{ active: btn === selectedFilter }"
-        data-filter-btn
-      >{{ btn }}</button>
-    </div>
-
-    <!-- Filter items -->
-    <div>
-      <div
-        v-for="(item, index) in filterItems"
-        :key="index"
-        :class="{ active: activeFilter === 'all' || activeFilter === item.category }"
-        :data-filter-item="item.category"
-      >
-        <!-- Display your filtered items content here -->
-      </div>
-    </div>
+  <div class="hidden-element">
+    <!-- Your content goes here -->
+    <p style="color: white">This element becomes visible after 5 seconds.</p>
   </div>
 </template>
 
@@ -64,8 +36,18 @@ export default {
   },
 };
 </script>
-In this Vue component:
+<style scoped>
+ .hidden-element {
+      visibility: hidden;
+      animation: fadeIn 5s forwards;
+      animation-delay: 1s; /* Delay the animation for 5 seconds */
+    }
 
-We use Vue directives and data properties to manage the state and user interactions.
-The select options, filter
+    @keyframes fadeIn {
+      to {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+</style>
 

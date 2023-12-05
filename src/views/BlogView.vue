@@ -7,7 +7,7 @@
     <section class="blog-posts">
       <template v-if="blogs">
         <Blog :blogs="blogs"/>
-        </template>
+      </template>
     </section>
 
   </article>
@@ -22,7 +22,7 @@ import {mapState} from "vuex";
 export default {
   name: "BlogView",
   components: {Header, Blog},
-    computed: {
+  computed: {
     ...mapState({
       blogs: state => state.blog.data,
       isLoading: state => state.blog.isLoading
