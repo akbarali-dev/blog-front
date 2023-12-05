@@ -6,6 +6,7 @@ const AboutService={
         const username = getCurrentUser('current-user')
         return axios.get(`/about/user-about/${username}`)
     },
+
     contact(){
         const username = getCurrentUser('current-user')
         return axios.get(`about/user-contact/${username}`)
